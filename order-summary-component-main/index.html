@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Summary</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --blue-100: hsl(225, 100%, 94%);
+        --blue-700: hsl(245, 75%, 52%);
+        --blue-950: hsl(223, 47%, 23%);
+        --blue-50: hsl(225, 100%, 98%);
+        --gray-600: hsl(224, 23%, 55%);
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: "Red Hat Display", sans-serif;
+        background-color: var(--blue-100);
+        background-image: url("images/pattern-background-desktop.svg");
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 100% auto;
+        padding: 30px; }
+
+      .card { width: 450px;
+        max-width: calc(100vw - 32px);
+        background: var(--white);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 25px 60px rgba(56, 41, 224, 0.18);
+      }
+
+      .hero {width: 100%;
+        height: 220px;
+      }
+
+      .hero img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .content {
+        padding: 32px 34px 28px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.96);
+      }
+
+      h1 {
+        margin-bottom: 18px;
+        color: var(--blue-950);
+        font-size: 2rem;
+        font-weight: 900;
+      }
+
+      .description {
+        max-width: 290px;
+        margin: 0 auto 24px;
+        color: var(--gray-600);
+        font-size: 1rem;
+        line-height: 1.6;
+        font-weight: 500;
+      }
+
+      .plan-box {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: var(--blue-50);
+        border-radius: 12px;
+        padding: 16px 18px;
+        margin-bottom: 28px;
+      }
+
+      .plan-icon {
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        border-radius: 50%;
+      }
+
+      .plan-icon img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+      }
+
+      .plan-text {
+        flex: 1;
+        text-align: left;
+      }
+
+      .plan-text strong {
+        display: block;
+        color: var(--blue-950);
+        font-size: 1rem;
+        font-weight: 900;
+      }
+
+      .plan-text span {
+        display: block;
+        color: var(--gray-600);
+        font-size: 0.98rem;
+        font-weight: 700;
+        margin-top: 4px;
+      }
+
+      .change-link {
+        color: var(--blue-700);
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      .btn {
+        width: 100%;
+        border: none;
+        border-radius: 12px;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+        transition: opacity 0.2s ease, background-color 0.2s ease;
+      }
+
+      .btn-primary {
+        background: var(--blue-700);
+        color: var(--white);
+        padding: 16px 18px;
+        margin-bottom: 18px;
+        box-shadow: 0 15px 25px rgba(56, 41, 224, 0.25);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--gray-600);
+        padding: 10px;
+      }
+
+      .btn-primary:hover {
+        background-color: #766cf1;
+      }
+.btn-secondary:active { transform: translateY(1px); }
+
+      .btn-secondary:hover,
+      .change-link:hover {
+        opacity: 0.8;
+      }
+.btn-secondary:active,
+.change-link:active { opacity: 0.6; }
+
+      @media (max-width: 600px) {
+        body {
+          background-image: url("images/pattern-background-mobile.svg");
+          background-size: cover;
+        }
+
+        .card {
+          width: 327px;
+        }
+
+        .hero {
+          height: 160px;
+        }
+        .content {
+          padding: 28px 24px 24px;
+        }
+        .h1 {
+          font-size: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+      <main class="card" aria-label="Order summary card">
+        <div class="hero">
+          <img src="images/illustration-hero.svg" alt="Woman listening to music" />
+        </div>
+
+        <div class="content">
+          <h1>Order Summary</h1>
+          <p class="description">
+            You can now listen to millions of songs, audiobooks, and podcasts on any
+            device anywhere you like!
+          </p>
+
+          <div class="plan-box">
+            <div class="plan-icon">
+              <img src="images/icon-music.svg" alt="Music icon" />
+            </div>
+
+            <div class="plan-text">
+              <strong>Annual Plan</strong>
+              <span>$59.99/year</span>
+            </div>
+
+            <a href="#" class="change-link">Change</a>
+          </div>
+
+          <button class="btn btn-primary" type="button">Proceed to Payment</button>
+          <button class="btn btn-secondary" type="button">Cancel Order</button>
+        </div>
+      </main>
+  </body>
+</html>
